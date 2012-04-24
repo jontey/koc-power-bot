@@ -1,0 +1,364 @@
+REVISION HISTORY:
+----------------
+
+20120316b
+   * Added Minimum and Maximum knight filters to auto DF
+
+20120314f
+   *Fixed auto crest not checking to ensure LC and HC present in city
+20120314e
+   *Fixed auto salvage to continue looping
+20120314d
+   *Changed UI
+   *More options to auto salvage
+   *Updated crest tab to enable multiple attacks from different cities
+   *Fixed transport tab error
+20120312a
+   *Added all troops to crest function
+   *Added ability to add multiple routes (from multiple cities) in the crest function
+20120111a
+   *Fixed tower alert
+   *Fixed widescreen
+20111209b
+   *Add autocraft tab
+   *Add research, knight, guardian info to combat tab
+   *Rework combat tab priority system
+   *Rework combat tab rounds system
+   *Add research levels to tower alert
+   *Removed switch to city for build help
+   *Fixed rally point info for level 12
+   *Reworked auto crest tab
+20111120a
+   *Fixed to work with kabam standalone site
+   *Fixed to work with 8th city
+   *Added update now button
+   *Fixed gifts tab "parse error page 1" and "no gifts found"
+   *Added combat tab (Formula still needs improvement)
+20111109a
+   *Fixed auto delete raid reports not working
+   *Fixed gifts tab "Parse page 1 error"
+   *Fixed show transport routes aetherstone not showing
+   *Fixed update script source not saving
+20111105c
+   *Added aetherstone to auto transport
+   *Added option to enable/disable auto updater
+   *Added option to check google code for beta updates
+   *Fixed gifts tab
+20111030d
+   *Added Auto DF tab (credits to Phil Cazz for original build)
+   *Added auto updater check into script
+   *Fixed gifts tab
+   *Auto delete wild reports now deletes DF reports
+20111015a
+   *Fixed resource speed up not working
+20111014a
+   *Added resource speed up for auto train
+20110903a
+   *Fixes for Firefox 7
+   *Added auto blacklist function for chat tab (Powerbot won't reply or process chat from blacklisted people)
+   *Added Viaero provider for US
+   *Fixed transport tab not working
+   *Fixed resource tab and gifts tab not scrolling
+20110818b
+   *Changed use workers percentage to use total population percentage instead of idle population percentage
+   *Fixed minimum and maximum troops not working
+   *Fixed raid report interval not saving
+20110817a
+   *Fixed minimum troops not working
+   *Fixed init error for auto train tab
+20110816a
+   *Fixed build help not publishing to alliance chat
+   *Enhancements to autotrain logic
+20110723a
+   *Added crest report for auto cresting
+   *Fixed widescreen for users still displaying ads
+   *Added current troop count for reinforce tab
+   *Fixed popup error showing [object][object] message
+   *Added resource tab
+20110718d
+   *Fixed widescreen
+   *Added food gain report for raid tab
+   *Added function for powerbot to switch to selected city when posting for build help
+   *Added option for auto publish facebook post to not change default privacy setting
+   *Fixed widescreen display for new facebook chat pane
+
+20110713a
+   *Fixed Tower Alert
+   *Fixed Crest being stuck on Abandon
+   *Fixed some small crest stuff
+   *Fixed Reset Raid Timer
+   *Added Troop check for crest
+   *Added Troop numbers to Export to Raid
+   *Added Auto Reports delete (barb/transport/wilds) every 5min
+   *Added AutoTrain options
+   *Fixed some AutoTrain bugs
+   *Added Reset All Options button
+
+20110704a
+   *Fixed resources not being accounted for in autotrain
+   *Fixed not training when city one not selected
+   *Fixed bugs on delete of raids
+   *Fixed raid status error's (hope so)
+   *Added extra options for autotrain
+
+20110703a
+   *Added Raid Tab (beta release)
+   *Added export to raid from search tab
+   *Added toggle city from search tab city selector
+   *Added AutoTrain Tab
+   *Fixed the transport bug with gold
+
+20110626a
+   *Fixed refresh if KOC not loaded within 1 minute (changed to 30 seconds)
+   *Added auto publish facebook posts
+   *Added auto help build posts in alliance chat
+   *Added auto hide build posts
+   *Added map overlay function (KocAttack must be disabled for it to work)
+   *Fixed issue with koc loading picture and facebook pop up not showing when widescreen is disabled
+   *Added 3 options to widescreen - normal, wide, ultrawide
+   *Added auto delete cresting reports
+   *Fixed bug where reports don't get deleted
+
+20110619a
+   *Changed wide screen width to 1520px from the previous 1220px
+   *Added Phillipines cell provider Smart
+   *Fixed scout list to wait 5 seconds for rally point to clear
+   *Fixed raid tab to resend march when stopped
+   *Fixed raid tab to calculate return time when march gets stuck at waiting for report
+   *Two rows for tabs
+   *Fixed gifts tab =D
+
+20110613a
+   *Widescreen fix
+   *Changed barb interval to 4 seconds cap from previous 10 seconds
+
+20110612a
+   *Reverted barb timer
+   *Public release for cresting tab
+   *Added option to resume barbs after impending attack
+   *Raid tab released
+   *Added option to not select a knight for reinforcements
+
+20110610a
+   *Changed spacing between tabs to fit powerbot into koc game screen
+   *Fixed issue with bulk add barb coords to kocattack
+   *Changed timer mechanism for auto barb
+   *Fixed reassign tab to disregard marching troops in reassign mode
+   *Changed minimum spam timer to once every 30 minutes
+
+20110607a
+   *Added option to specify interval of attacking the same barb
+   *Fixed auto barb delete from deleting wild attack reports
+   *Fixed reassign tab getting stuck at coords 0,0
+   *Added a confirm box to recover from adding coords 0,0 instead of erroring out.
+
+20110605c
+   *Fix for autobarb killswitch
+   *Fix for autospam having difficulty remembering settings
+
+20110605b
+   *Decreased spacing between tabs so as to fit into the screen
+   *Added toggle button for barbs beside bot tab
+   *Added killswitch for barb when under attacked
+   *Fixed coords and names for provinces
+   *Fixed create scout list to show all types selected and not misted only
+   *Added help for barb tab
+   *Fix for reports getting deleted even if disabled
+   *Sorting for highest/lowest level for barbs
+   *Fixed sort of knight to use highest combat skill first
+   *Fixed reassign city display button messing with reinforce tab's coord box
+   *Fix for reassign function to calculate marching troops
+   *Preparation of ajaxrequest for barb raids feature
+   *Updated spam tab to make it less annoying
+
+20110527a
+   *Attempted to fix issue with missing "Bot" tab
+   
+20110522d
+   *Released updated version of 20110521b
+   *Fixed bug with marches not sending out if rally point has no current marches
+   *Revamped the timer mechanism
+   *Added a min distance option
+   *Changed auto delete timer to only delete every 2 minutes to reduce server load.
+   *Added rallypoint info on barb tab
+   *More clarification on the changing numbers in barb tab
+   *Changed barb overview message to include number of hours barbed, negative food gain and total food gain.
+
+20110521b
+   *Added option for users to set max search distance for barbs (capped at 75 spaces)
+   *Fixed issue where auto barb gets stuck after a while
+   *Fixed barb reports doesn't get deleted when not barbing from last city
+   *Fixed auto delete reports deleting transports (now only delete transports that you sent)
+   *Fixed issue where auto delete reports messes up kabam's servers
+   *Fixed issue of audio alert not loading.(Click on default if sound file is not loading)
+
+20110519c
+   *Added the word "wagons" to transport text to clarify things
+   
+20110519b
+   *Fixed Delete Messages toggle + function
+   *Fixed sending of barb report
+   *Fixed issues for non English players
+   *Added max distance (NEEDS TO BE TESTED!)
+   *Added method : Lowest level first
+
+20110518b
+   *Merged auto-barb codebase with the alternate version in the trunk so now it contains the new features from both
+
+20110518a
+   *Released new barb tab as well as other new tabs
+
+20110515a
+   *Fix for gifts tab
+   *Fix for city search not displaying neutral
+
+20110513b
+   *Added options for city search to display friendly, ally, unallianced, and neutral
+   *Added search method square and radius
+   *Added auto scout method for misted cities
+   *Added reinforce tab
+
+20110511b
+   *Fixed problem with rally point level not always being properly detected
+   *Added more cell phone carriers (mobistar and 1und1)
+   *Fixed even more widescreen issues
+
+20110510b
+   *Fixed remaining widescreen issues (tomchapin)
+   
+20110510a
+   *Worked on fixing widescreen issues (jontey)
+
+20110507a
+   *Finally fixed gifts acceptor(Credits to TexasT)
+   *Added online status for city search
+   *Added support for rally point in other languages
+
+20110502a
+   *Fixes on transport timer
+   *Fixed reassign not sending out troops
+
+(SVN):
+
+20110501a:
+
+   *Fixes on transport
+
+   *Added reassign tab
+
+   *Added Food alert
+
+   *Added toggle for defend status on tower alert
+
+   *Used unixTime to handle transport and reassign interval
+
+   *Added check on empty 'to' city on transport and reassign
+
+
+20110423d:
+   *Completed transport tab
+   *Added spam tab
+   *Added copy paste coords into coord box
+   *Enlarged powerbot box to fit more tabs
+   *Fixed issue with bulk adding troops to auto attack
+
+20110412c:
+   *Added auto updater include and more detailed meta info
+
+20110412b:
+   *Bug fixes for widescreen
+
+20110412a:
+   * Fixed widescreen not working after addition of guardians
+   * Removed the new header from kabam
+
+20110408a:
+   * Added tower function (like in Toolkit) - maybe some bugs included
+   * Added trader tab - none working tab
+   * Please note: this is just to provide my latest codebase because i quite developing.
+   * Have fun people - I hope there will be someone that will go on with this work !!! :-) 
+
+20110327a:
+  * Added smaller version (GIF) of chat background image
+  * Embedded castle button and chat background images
+  * Changed URL of SWF player
+  * Fix widescreen for facebook changes on 3/24/2011
+  * Fix rare lockup in city search when userinfo not available
+  * fixed issue #291 (attack posted to chat even if option turned off)
+  * fixed issue #309 (Chat Not FOrmatting correctly to right of game)
+  * fixed issue #317 (no wide-screen)
+  * SWF player for sound
+
+20110313a:
+  * Add try/catch on anticd init, may help find 'bot not loading' problems.
+  * Removed margin above 6waves ads at top of screen if widescreen mode is enabled.(Thanks to bruno.pe...@gmail.com, issue #275)
+  * Added trim function for FF 3 browser (Thanks to mcd...@gmail report #276) - May fix Gift accept problems
+  * fixed #234 removed autoupdate feature
+  * fixed #254 Building ID does not match!!!!
+  * fixed #215 Seed.buildings["city" + currentcityid]["pos" + citpos]
+
+20110303a:
+  * Tower tab refactored.  Added options for playing sound files upon attack. 
+  * Fixed issue #239 (lots of incoming attacks crashes/holds up internet connection). 
+  * Fixed showing defend mode if user changes it from KofC's interface.
+  * Fixed window width overflow in search tab
+  * City search re-written (fixed issues #219, #261 and unreported issues)
+  
+20110216a:
+  * NEW: modded SearchTab by masterjdu (deathbynumbers) e.g. citysearch implemented
+  * fixed issue #187 (Seed.buildings["city" + currentcityid]["pos" + citpos])
+  * fixed issue #185 (Queue item requeued)
+  * fixed issue #183 (Export to KOC Attack: Incorrect troops if KOCA already had stored troops for location 0,0)
+
+20110208a:
+  * NEW: Remember last tab used on refresh
+  * NEW: Option to hide main window when user clicks on map coordinates. (issue #167)
+  * fixed issue #52  (Widemap: Vertical line)
+  * fixed issue #174 (Widemap: right side chopped off when zooming in and scrolling)  
+  * fixed issue #74  (Bot button disappears in FF 4)  
+  * fixed issue #124 and #169 (AutoBuild: using DI to build level 10+)  
+  * fixed issue #14  (AutoBuild: Ask for help shows Level 0 castle)
+  * fixed issue #130 (AutoBuild: not building in select cities when resources low in other city )  
+  * fixed issue #137 (AutoBuild: Destruct not queueing)  
+  * fixed issue #172 (Gifts: Parse error in some non-English languages)  
+  * fixed number of embassy slots available in alert-post-to-chat message
+
+20110204a:
+  * NEW: Anti-cheat detection added
+  * NEW: Auto-update check added
+  * fixed  issue #85  (Loss of optimization queue after refresh)
+  * fixed  issue #4  (Queue window not updated when building done)
+  * fixed  issue #118  (Page refresh problems)
+  * fixed  issue #123  (Parse error when accepting gifts)
+  * fixed  issue #64  (Build max not adding all levels to queue)
+  * fixed  issue #63  (6th city partially visible on tower tab)
+  * Make Map search export work with Nitkahs's latest update to KOC Attack 
+
+20110131a:
+  * fixed  issue #78  (Using DIs for building level 10)
+  * fixed  issue #89  (wide-screen option)
+  * fixed  issue #91  (page not found error on refresh) 
+
+20110128a:
+  * fixed  issue #61 : (Not always building in every city) 
+
+20110126a:
+  * Now compatible with Grease Monkey 0.9.0 ( issue #22 )
+  * Light Cavalry added to search export
+  * fixed  issue #6 : (wrong building level detected)
+  * fixed  issue #41 : (modal network error message)
+  * fixed  issue #43 : (Search results listbox larger than frame)
+  * fixed  issue #50 : (Tower tab init error) 
+
+20110124a: Fixes for Build tab:
+  *  issue #33 : (graphic glitch in widemap)
+  *  issue #31 : (now remembers help request state)
+  *  issue #28 : (alarm doesn't play anymore all the time)
+  *  issue #18 : (added security feature to prevent building level 10)
+  *  issue #34 : (cycles through all cities now)
+  *  issue #19 : (changed the way the queue starts building) 
+
+20110122a:
+  * new Tower-Tab (Audio Alarm on/off)
+  * bug fixes for giftaccept and buildbot
+  * WideMap? option 

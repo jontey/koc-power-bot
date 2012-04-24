@@ -1,0 +1,5 @@
+#summary Downloads
+
+= Downloads =
+
+Power Bot release candidate (20110110a): [http://koc-power-bot.googlecode.com/files/KOCpowerBot.20110110a.user.js Download here]

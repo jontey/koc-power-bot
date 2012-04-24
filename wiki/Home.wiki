@@ -1,0 +1,43 @@
+<wiki:comment>
+Home page of Bot wiki, with portions html in addition to WikiSyntax
+</wiki:comment>
+
+= http://koc-power-bot.googlecode.com/files/houselogo.png KOC Power Bot =
+
+The KOC Power Bot is a 3rd Party script add-on for the multi-player social networking game <a href="http://www.kabam.com/games/kingdoms-of-camelot">Kingdoms of Camelot</a> developed by <a href="http://www.kabam.com/">Kabam</a>. The KOC Power Bot is not developed by Kabam nor is it supported by Kabam. It is created by a group of individuals who refer to themselves as the "KoC Scripters" and is designed to enhance the player's enjoyment of the game Kingdoms of Camelot and improve functionality of many game features. The script is run with the <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey</a> extension which must be added to your browser or it may also be used with the <a href="https://addons.mozilla.org/en-us/firefox/addon/scriptish//">Scriptish</a> add-on. Currently the browsers that support these extensions are <a href="http://www.mozilla.com/en-US/firefox/new/">FireFox</a> and <a href="http://www.cometbird.com/">Cometbird</a>. The KOC Power Bot is designed to be used in conjunction with <a href="http://userscripts.org/scripts/show/103659">KOC Power Tools</a>, so you must load both scripts onto your browser for them to work effectively.
+
+There are two available downloads of the KOC Powerbot. The official release is located on <a href="http://userscripts.org/scripts/show/101052">userscripts.org</a>. You may also load the SVN version which will contain the most recent development of the script. However, the SVN may contain bugs and you will need to check for new releases on your own.
+
+http://koc-power-bot.googlecode.com/files/0107_dl.png<a href="http://koc-power-bot.googlecode.com/svn/trunk/KOCpowerBot.user.js">Download SVN</a>
+
+<em>*Tip - If you want a reminder of critical updates for your Power Bot, stick with the Official Release. </em>
+
+== Getting Started ==
+
+When you load your Kingdoms of Camelot game with the Greasemonkey extension turned on in your browser and the KOC Power Bot script enabled, you will see a tab in the upper left hand corner of the game. Clicking this tab will open your Power Bot and clicking it once more will close your Power Bot. The Power Bot will open up in a window on top of your Kingdoms of Camelot game.
+
+<p align="center">http://koc-power-bot.googlecode.com/files/wiki_bot_home.jpg
+
+<p align="left"><em>*TIP - Set the options in your powerbot first. </em>
+
+== Trouble Shooting ==
+
+If your bot tab disappears you may have had multi enabled. Close down all your game tabs and reload the script without running the game.
+
+Sometimes an update to the extension that enables Java Script on your browser will break the scripts you have loaded until they too are updated. If your script is broken after an update, revert to the previous version of the extension.
+
+<a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/versions/">Version History for Greasemonkey</a>
+
+<a href="https://addons.mozilla.org/en-us/firefox/addon/scriptish/versions/">Version History for Scriptish</a>
+
+If you are having trouble with losing data entered on your script, remember that data is only hard saved on a proper shut down of the browser and not when it crashes. So rather than running your browser non-stop for days, try shutting down the browser periodically, or at least on a daily basis.
+
+*Firefox 3.X is no longer supported*, it is recommended that you switch to Firebox 4 for optimal performance of your bot.
+
+----
+
+<wiki:comment>
+Following block is for the quick navigation links on the Bottom of the page.
+</wiki:comment>
+
+<p align="center"><a href="http://code.google.com/p/koc-power-bot/wiki/Tabs">Tabs</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToTower">Tower</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBH">Build</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToCrest">Crest</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToRaid">Raid</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBarb">Barb</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowtoTransport">Transport</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToReassign">Reassign</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSearch">Search</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToGifts">Gifts</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToOptions">Options</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToLog">Log</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSpam">Spam</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToAutoTrain">AutoTrain</a>

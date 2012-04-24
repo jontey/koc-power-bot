@@ -1,0 +1,43 @@
+#summary This page should be a reference to the settings found on the Options tab.
+
+*Power Bot Config:*
+
+  # Enable window drag (move window by dragging top bar with mouse).
+    Does what it says. Allows the user to drag the window by click and drag on the green top bar.
+  # Remember window open state on refresh
+    With this option checked, if you leave the bot dialog open and refresh the page, the bot dialog will open again when the page loads.
+
+*KofC Features:*
+
+  # Disable all Fairie popup windows
+    Prevents the _A Traveling Faire is passing_ and _Visit court_ from opening and interrupting your gameplay.
+  # Wide screen (all domains, requires refresh)
+    This option removes the ads-bar from the right of the game and left aligns the game.
+  # Refresh if KOC not loaded within 1 minute (all domains)
+    If for some reason the page does not load within the minute a page refresh will be initiated.
+  # Refresh KOC every XX minutes
+    Simpy refreshes the the page at the desired interval.
+  # Put chat on right (requires wide screen)
+    Moves the chat-frame to the right if the game-frame and extends the chat-frame. Very nice on widescreen monitors and makes it easy to see the chat whilst working with open dialogs in the game-frame.
+  # Use !WideMap (requires wide screen)
+    This option extends the map-view by 5 squares to the right.
+  # Auto collect gold when happiness reaches XX %
+    Does the same thing that the _Increase Gold_ button in the castle dialog does, but automatically when the desired  happiness rate is reached.
+ 
+*Extra Features:*
+ # Help alliance build/research posts
+  This option will post the "Post to wall" message automatically 
+ # Hide alliance requests in chat
+  This option automatically hides all help messages so the alliance chat is less cluttered with building spam.
+ # Auto publish Facebook posts for >Everyone>Friends only>Me Only> (For all domains)
+  This option publish post automatically and if check-marked it affects all your domains  
+ # Show Player & Might in map.
+  Alters the map to show the owners of player owned property.
+----
+
+<wiki:comment>
+Following block is for the quick navigation links on the Bottom of the page.
+</wiki:comment>
+
+<p align="center"><a href="http://code.google.com/p/koc-power-bot/wiki/Tabs">Tabs</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToTower">Tower</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBH">Build</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToCrest">Crest</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToRaid">Raid</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBarb">Barb</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowtoTransport">Transport</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToReassign">Reassign</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSearch">Search</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToGifts">Gifts</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToOptions">Options</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToLog">Log</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSpam">Spam</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToAutoTrain">AutoTrain</a>
+http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToChat">Chat</a>

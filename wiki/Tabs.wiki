@@ -1,0 +1,21 @@
+#summary Tabs
+
+=KoC Power Bot - Tabs=
+
+When opening the Power Bot, tabs for the different sections will be found at the top of the pop-up window. The available tabs will change as features are added or removed from the script. Selecting a tab at the top will allow you to access the features you want of the Power Bot.
+
+http://koc-power-bot.googlecode.com/files/bottabs.jpg
+
+==Trouble Shooting==
+
+If your Power Bot window has popped up over the Bot tab in the game, you may also close the window by clicking the "X" at the top right of the window.
+
+If the "X" to close the Power Bot window extends off of the available screen space, or any other section of the Power Bot tabs are unavailable, go to the options tab and enable dragging of the window.
+
+----
+
+<wiki:comment>
+Following block is for the quick navigation links on the Bottom of the page.
+</wiki:comment>
+
+<p align="center"><a href="http://code.google.com/p/koc-power-bot/wiki/Tabs">Tabs</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToTower">Tower</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBH">Build</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToCrest">Crest</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToRaid">Raid</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBarb">Barb</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowtoTransport">Transport</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToReassign">Reassign</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSearch">Search</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToGifts">Gifts</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToOptions">Options</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToLog">Log</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSpam">Spam</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToAutoTrain">AutoTrain</a>

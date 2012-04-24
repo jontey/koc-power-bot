@@ -1,0 +1,65 @@
+#summary Search for wildernesses of barbarian camps
+
+*Search for:*
+  A dropdown-box for selecting whether to search for Barbarian Camps or Wildernesses
+*Center: X: xxx Y: yyy*
+  Enter the coordinates for the center of your desired search area or click one of the _city buttons_ http://i.imgur.com/MPlZr.png to center on that city. 
+
+*Max. Distance: xx*
+  Tells the Bot how far to search from the desired center. Max Distance must be between 1 and 75.
+
+*Start Search*
+  Button to initiate the map-scan.
+----
+
+You will get a table when the search is done:
+|| *Location* || *Distance* || *Lvl* || *Type* ||
+|| xxx,yyy || 8.00 || 5 || Lake ||
+|| xxx,yyy || 12.12 || 3 || Grassland ||
+|| xxx,yyy || 13.87 || 3 || Mountain ||
+
+----
+
+To the right of the table you get filtering settings:
+||Min. level to show:||If you don't want to see _low_ level Wildernesses or Camps.||
+||Max. level to show:||If you don't want to see _high_ level Wildernesses or Camps.||
+||Wilderness Type:^*^ ||Lets you filter for one _type_ of wildernesses.||
+||Unowned Only:^*^ ||If checked the table displays only _unowned_ wildernesses.||
+||Sort By:||Lets you sort the table by _Level_ or _Distance_ from center.||
+||Show coords only:||If checked the table only displays the _Location_ column.||
+
+^*^  not available when searching for Barbarian Camps
+----
+If _KOCAttack_ or _KOCAttack - Extra Features!_ are installed and running another button will appear beneath the filtering settings when searching for Barbarian Camps:
+
+|| <font color="c0c000" > Export Results ||
+
+This button opens: _Power Bot Export_ dialog which contains a export table:
+||Target Type||# targets||STroops||Wagon||Archers||Cavalry||Heavies||Ballista||
+||Barb level 1|| xx ||0||0||0||0||0||0||
+||Barb level 2|| xx ||0||0||0||0||0||0||
+||Barb level 3|| xx ||0||0||0||0||0||0||
+||Barb level 4|| xx ||0||0||0||0||0||0||
+||Barb level 5|| xx ||0||0||0||0||0||0||
+||Barb level 6|| xx ||0||0||0||0||0||0||
+||Barb level 7|| xx ||0||0||0||0||0||0||
+||Barb level 8|| xx ||0||0||0||0||0||0||
+||Barb level 9|| xx ||0||0||0||0||0||0||
+||Barb level 10|| xx ||0||0||0||0||0||0||
+
+The Barbarian Camps from the _filtered list_ is displayed in this new table sorted as amount of targets for each level/type of Barbarian Camp. In the table you can enter how many troops of each kind you want so send to _each_ Camp. 
+
+When you have populated the table as you want it you should press the button at the bottom of the page:
+
+|| <font color="c0c000" > Bulk Add to KOC Attack ||
+
+This button start exporting the attack to the city you centered on if you used the _city buttons_ http://i.imgur.com/MPlZr.png or to the city currently selected in the game. Each level populated in the table gets exported in ascending order of level. After each level exported you get a popup with the message "Bulk added xx coords" and a "OK" button. Then it exports the next level. After the exports it shows the table and have added a log beneath the _Bulk Add to KOC Attack_ button. The export is done and you can close the dialog.
+
+----
+
+<wiki:comment>
+Following block is for the quick navigation links on the Bottom of the page.
+</wiki:comment>
+
+<p align="center"><a href="http://code.google.com/p/koc-power-bot/wiki/Tabs">Tabs</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToTower">Tower</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBH">Build</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToCrest">Crest</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToRaid">Raid</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToBarb">Barb</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowtoTransport">Transport</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToReassign">Reassign</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSearch">Search</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToGifts">Gifts</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToOptions">Options</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToLog">Log</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToSpam">Spam</a> http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToAutoTrain">AutoTrain</a>
+http://koc-power-bot.googlecode.com/files/0009_round%20cyan.png <a href="http://code.google.com/p/koc-power-bot/wiki/HowToChat">Chat</a>

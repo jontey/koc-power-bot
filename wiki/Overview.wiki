@@ -1,0 +1,32 @@
+= Overview tab =
+----
+
+*Recources*
+ * View the total and subtotal per city for each type of recource.
+ * View the recources per type marching (total for all cities).
+ * The coordinates under the city are clickable.
+
+
+*Troops*
+ * View the total of troops and subtotal per city.
+ * View the troops marching (total for all cities).
+
+*Food*
+ * "Food +/-"
+  Shows a positive or negative number. If it's positive you will gain food. If negative your upkeep is larger then your production.
+ * "Food left"
+  If your upkeep is negative it will show how many hours and/or days of food you have left.
+
+*Wilds*
+ * Shows the max number of wilds and how many you own.
+
+*Knights*
+ * Shows how many knights you have in each city
+
+*Troop Que*
+ * Gives the remaining time to train all troops in your barracks per city.
+
+*Wall Que*
+ * Gives the remaining time to build all defenses in your wall per city.
+
+<IMG src="http://koc-power-bot.googlecode.com/files/overview.jpg" width=751 height=649>

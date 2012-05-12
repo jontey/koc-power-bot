@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           KOC Power Bot
-// @version        20120424a
+// @version        20120512a
 // @namespace      mat
 // @homepage       http://userscripts.org/scripts/show/101052
 // @include        *.kingdomsofcamelot.com/*main_src.php*
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 
-var Version = '20120424a';
+var Version = '20120512a';
 
 // These switches are for testing, all should be set to false for released version:
 var DEBUG_TRACE = false;
@@ -227,6 +227,7 @@ var TrainOptions = {
   Max        : {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0},
   Gamble     : {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0},
   Workers    : {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0},
+  Item       : {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0},
   Keep       : {1:{Food:0,Wood:0,Stone:0,Ore:0},
                 2:{Food:0,Wood:0,Stone:0,Ore:0},
 				3:{Food:0,Wood:0,Stone:0,Ore:0},
@@ -277,6 +278,7 @@ var ThroneOptions = {
 	Salvage:{Attack:true,Defense:true,Life:true,Speed:true,Accuracy:true,Range:true,Load:true,MarchSize:true,MarchSpeed:true,CombatSkill:true,IntelligenceSkill:true,PoliticsSkill:true,ResourcefulnessSkill:true,TrainingSpeed:true,ConstructionSpeed:true,ResearchSpeed:true,CraftingSpeed:true,Upkeep:true,ResourceProduction:true,ResourceCap:true,Storehouse:true,Morale:true,ItemDrop:true},
 	SalvageQuality:0,
 	saveXitems:0,
+	thronekeep:1,
 };
 var AttackOptions = {
   LastReport    		: 0,
@@ -1625,16 +1627,16 @@ Tabs.Throne = {
     }
     t.checkUpgradeInfo(true);
     if (ThroneOptions.Active) t.setActionTimer = setInterval(t.doAction,10000);
-    setInterval(t.salvageCheck,10*60*1000);
+    setInterval(t.salvageCheck,1*60*1000);
  },
     
  Salvage : function (){ 
     var t = Tabs.Throne; 
     try {      
       m = '<DIV id=pbTowrtDivF class=pbStat>AUTOMATED SALVAGE FUNCTION</div><TABLE id=pbbarbingfunctions width=100% class=pbTab>';
-	  m+='<TR><TD><INPUT type=submit id=pbsalvage_run value="Auto Salvage = '+(Options.ThroneDeleteItems?'ON':'OFF')+'" /></td><TD><INPUT id=ShowSalvageHistory type=submit value="History"></td></tr>';
+	  m+='<TR><TD><INPUT type=submit id=pbsalvage_run value="Auto Salvage = '+(Options.ThroneDeleteItems?'ON':'OFF')+'" /></td><TD><INPUT id=ShowSalvageHistory type=submit value="History"></td><TD>Keep items with more than <INPUT type=text id=pbthrone_keep size=3 value="'+ThroneOptions.thronekeep+'" /> stats checked.</td></tr>';
 	  m+='<TR><TD>Keep above: ' + htmlSelector({0:'ALL', 1:translate('Common'), 2:translate('Uncommon'), 3:translate('Rare'), 4:translate('Epic'), 5:translate('Wonderous')},ThroneOptions.SalvageQuality,'id=Quality')+'</td>';
-	  m+='<TD>Keep first <INPUT type=text id=saveXitems size=2 maxlength=2 value='+ ThroneOptions.saveXitems +'> items.</td><TD><FONT color=red>Ckeck boxes for items you want to <b>KEEP</b>.</font></td></table>';
+	  m+='<TD>Keep first <INPUT type=text id=saveXitems size=2 maxlength=2 value='+ ThroneOptions.saveXitems +'> items.</td><TD><FONT color=red>Check boxes for items you want to <b>KEEP</b>.</font></td></table>';
       
       m+='<TABLE id=pbbarbingfunctions width=60% class=pbTab><TR><TD><B>Combat:</b></td></tr>';
       m+='<TR><TD></td><TD><INPUT id=Attack type=checkbox '+ (ThroneOptions.Salvage.Attack?'CHECKED ':'') +'/>&nbsp;Attack</td></tr>';
@@ -1702,6 +1704,7 @@ Tabs.Throne = {
       document.getElementById('Storehouse').addEventListener ('change', function(){ThroneOptions.Salvage.Storehouse = document.getElementById('Storehouse').checked;saveThroneOptions();},false);
       document.getElementById('Morale').addEventListener ('change', function(){ThroneOptions.Salvage.Morale = document.getElementById('Morale').checked;saveThroneOptions();},false);
       document.getElementById('ItemDrop').addEventListener ('change', function(){ThroneOptions.Salvage.ItemDrop = document.getElementById('ItemDrop').checked;saveThroneOptions();},false);
+      document.getElementById('pbthrone_keep').addEventListener ('change', function(){ThroneOptions.thronekeep = parseInt(document.getElementById('pbthrone_keep').value);saveThroneOptions();},false);
 
       document.getElementById('Quality').addEventListener  ('change', function(){ThroneOptions.SalvageQuality = this.value;saveThroneOptions();},false);
       document.getElementById('saveXitems').addEventListener('change', function(){ThroneOptions.saveXitems = document.getElementById('saveXitems').value;saveThroneOptions();} , false);
@@ -2133,13 +2136,13 @@ PaintSalvageHistory : function() {
 					ThroneOptions.Items[k]["levelfrom"] = parseInt(unsafeWindow.kocThroneItems[ThroneOptions.Items[k]["id"]]["level"]) + countUpgrade;
 					ThroneOptions.Items[k]["levelto"] = parseInt(ThroneOptions.Items[k]["levelfrom"]) +1;
 						ThroneOptions.Items[k]["qualityfrom"] = parseInt(unsafeWindow.kocThroneItems[ThroneOptions.Items[k]["id"]]["quality"]) + countEnhance;
-					if (ThroneOptions.Items[k]["levelto"]>10 && !firstRun) {alert("You cant upgrade higher then level 10!");ThroneOptions.Items.splice (k,1);return;}
+					if (ThroneOptions.Items[k]["levelto"]>10 && !firstRun) {alert("You can't upgrade higher then level 10!");ThroneOptions.Items.splice (k,1);return;}
 				}
 				if (ThroneOptions.Items[k]["action"] == "Enhance") {
 					ThroneOptions.Items[k]["qualityfrom"] = parseInt(unsafeWindow.kocThroneItems[ThroneOptions.Items[k]["id"]]["quality"]) + countEnhance;
 					ThroneOptions.Items[k]["qualityto"] = parseInt(ThroneOptions.Items[k]["qualityfrom"]) +1;
 					 ThroneOptions.Items[k]["levelfrom"] = parseInt(unsafeWindow.kocThroneItems[ThroneOptions.Items[k]["id"]]["level"]) + countUpgrade;
-					if (ThroneOptions.Items[k]["qualityto"]>5 && !firstRun) {alert("You cant upgrade higher then quality 5!");ThroneOptions.Items.splice (k,1);return;}
+					if (ThroneOptions.Items[k]["qualityto"]>5 && !firstRun) {alert("You can't upgrade higher then quality 5!");ThroneOptions.Items.splice (k,1);return;}
 				}
 				if (ThroneOptions.Items[k]["action"] == "Enhance") var lvl = parseInt(ThroneOptions.Items[k]["qualityfrom"]) +1;
 				if (ThroneOptions.Items[k]["action"] == "Upgrade") var lvl = parseInt(ThroneOptions.Items[k]["levelfrom"]) +1;
@@ -2587,32 +2590,40 @@ return i;
 
 salvageCheck : function (){
 	var t = Tabs.Throne;
-	var del = true;
+	var del = false; //false by default
 	var level = false;
 	var type ="";
 	var NotUpgrading = true;
+	var number = 0;
 	var count=0;
 	if(!Options.ThroneDeleteItems) return;
 	if (t.SalvageRunning == true) return;
 	t.SalvageRunning = true;
 	for (m in unsafeWindow.kocThroneItems) {
-		y =   unsafeWindow.kocThroneItems[m];
+		y = unsafeWindow.kocThroneItems[m];
+		level = false;
+		type = "";
+		NotUpgrading = true;
+		number = 0;
 		count++;
 		if (typeof(y.id) == 'number') {
 			NotUpgrading = true;
 			for (k in ThroneOptions.Items) {if (ThroneOptions.Items[k]["id"] == y.id) NotUpgrading = false;}
 			if (count<=(parseInt(Seed.throne.rowNum)*5) && count>ThroneOptions.saveXitems) {
-					del = true;
+					//del = true;
 					level = false;
 					if (y.quality > ThroneOptions.SalvageQuality) level=true;
 					if (ThroneOptions.SalvageQuality == 0) level=true;
 					for (i=1;i<=5;i++){
 						for (l=0;l<unsafeWindow.cm.thronestats.effects[y.effects["slot"+i].id]["2"].length;l++){
 							type = unsafeWindow.cm.thronestats.effects[y.effects["slot"+i].id]["2"][l];
-							if (ThroneOptions.Salvage[type]  && level) {del = false};
+							if (ThroneOptions.Salvage[type]) {number++;}
+							
 						}
 					}
-					if (del && NotUpgrading && !y.isEquipped && !y.isBroken && t.LastDeleted != y.id) {
+					if(ThroneOptions.thronekeep < 1) ThroneOptions.thronekeep = 1;
+					logit(y.name+' '+number);
+					if (!level && number < ThroneOptions.thronekeep && NotUpgrading && !y.isEquipped && !y.isBroken && t.LastDeleted != y.id) {
 						t.SalvageArray.push(y.id);
 					}					 
 			}
@@ -9868,6 +9879,10 @@ Tabs.Barb = {
     var t = Tabs.Barb;
     
     t.opt.maxDistance = parseInt(AttackOptions.MaxDistance); 
+	t.opt.searchDistance = (t.opt.maxDistance*2);
+	if(t.opt.maxDistance > 40){
+		t.opt.searchDistance = 40;
+	}
     t.opt.searchShape = 'circle'; 
     t.mapDat = [];
     t.firstX =  t.opt.startX - t.opt.maxDistance;
@@ -9883,7 +9898,7 @@ Tabs.Barb = {
     var element = 'pddatacity'+(t.lookup-1);
     document.getElementById(element).innerHTML = 'Searching at '+ xxx +','+ yyy;
    
-    setTimeout (function(){t.MapAjax.request (xxx, yyy, 40, t.mapCallback)}, MAP_DELAY);
+    setTimeout (function(){t.MapAjax.request (xxx, yyy, t.opt.searchDistance, t.mapCallback)}, MAP_DELAY);
   },
   
   mapCallback : function (left, top, width, rslt){
@@ -9905,12 +9920,12 @@ Tabs.Barb = {
 	  }
     }
     
-    t.tilesSearched += (40*40);
+    t.tilesSearched += (t.opt.searchDistance*t.opt.searchDistance);
 
-    t.curX += 40;
+    t.curX += t.opt.searchDistance;
     if (t.curX > t.lastX){
       t.curX = t.firstX;
-      t.curY += 40;
+      t.curY += t.opt.searchDistance;
       if (t.curY > t.lastY){
 		t.stopSearch('Found: ' + t.mapDat.length);
         return;
@@ -9920,7 +9935,7 @@ Tabs.Barb = {
     var y = t.MapAjax.normalize(t.curY);
     var element = 'pddatacity'+(t.lookup-1);
     document.getElementById(element).innerHTML = 'Searching at '+ x +','+ y;
-    setTimeout (function(){t.MapAjax.request (x, y, 40, t.mapCallback)}, MAP_DELAY);
+    setTimeout (function(){t.MapAjax.request (x, y, t.opt.searchDistance, t.mapCallback)}, MAP_DELAY);
   },
   
   stopSearch : function (msg){
@@ -10029,7 +10044,7 @@ Tabs.Options = {
         <TR><TD><INPUT id=pbWideOpt type=checkbox '+ (GlobalOptions.pbWideScreen?'CHECKED ':'') +'/></td><TD>'+translate("Enable widescreen style:")+' '+ htmlSelector({normal:'Normal', wide:'Widescreen', ultra:'Ultra'},GlobalOptions.pbWideScreenStyle,'id=selectScreenMode') +' '+translate("(all domains, requires refresh)")+'</td></tr>\
         <TR><TD><INPUT id=pbsendmeaway type=checkbox '+ (GlobalOptions.pbNoMoreKabam?'CHECKED ':'')+'/></td><TD>'+translate("Send me away from kabam!")+'</td></tr>\
         <TR><TD><INPUT id=pbupdate type=checkbox '+ (GlobalOptions.pbupdate?'CHECKED ':'') +'/></td><TD>'+translate("Check updates on")+' '+ htmlSelector({0:'Userscripts', 1:'Google Code'},GlobalOptions.pbupdatebeta,'id=pbupdatebeta') +' '+translate("(all domains)")+' &nbsp; &nbsp; <INPUT id=pbupdatenow type=submit value="'+translate("Update Now")+'" /></td></tr>\
-		<TR><TD>&nbsp;&nbsp;&nbsp-</td><TD>'+translate("Change window transparency between \"0.7 - 2\" ")+'&nbsp <INPUT id=pbtogOpacity type=text size=3 /> <span style="color:#800; font-weight:bold"><sup>'+translate("*Requires Refresh")+'</sup></span></td></tr>\
+		<TR><TD>&nbsp;&nbsp;&nbsp;-</td><TD>'+translate("Change window transparency between \"0.7 - 2\" ")+'&nbsp <INPUT id=pbtogOpacity type=text size=3 /> <span style="color:#800; font-weight:bold"><sup>'+translate("*Requires Refresh")+'</sup></span></td></tr>\
         <TR><TD colspan=2><BR><B>'+translate("KofC Features:")+'</b></td></tr>\
         <TR><TD><INPUT id=pbFairie type=checkbox /></td><TD>'+translate("Disable all Fairie popup windows")+'</td></tr>\
         <TR><TD><INPUT id=pbWatchEnable type=checkbox '+ (GlobalOptions.pbWatchdog?'CHECKED ':'') +'/></td><TD>'+translate("Refresh if KOC not loaded within 1 minute (all domains)")+'</td></tr>\
@@ -11682,7 +11697,13 @@ Tabs.AutoTrain = {
         m+='<option value="25">25%</options>';
         m+='<option value="50">50%</options>';
         m+='<option value="75">75%</options>';
-        m+='<option value="100">100%</options>';
+        m+='<option value="100">100%</options></select>';
+		m+='</td><td>';
+		m += '<TD><SELECT class='+city+' id="TrainSpeedItem_'+city+'">\
+		<option value=0><CENTER>--- '+unsafeWindow.g_js_strings.commonstr.items+' '+unsafeWindow.g_js_strings.commonstr.speedup+' ---</center></option>\
+		<option value=36>'+unsafeWindow.itemlist.i36.name+'</option>\
+		<option value=37>'+unsafeWindow.itemlist.i37.name+'</option>\
+		<option value=38>'+unsafeWindow.itemlist.i38.name+'</option></select>';
 		m+='</td></tr></table></td><tr>';
         m += '<TD></td><TD><TABLE><TR>';
 		m += '<TD width=5%><img src="http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/food_30.png"></td>';
@@ -11716,6 +11737,7 @@ Tabs.AutoTrain = {
         document.getElementById('SelectMax'+city).checked = TrainOptions.SelectMax[city];
         document.getElementById('workers'+city).value = TrainOptions.Workers[city];
         document.getElementById('TrainSpeed_'+city).value = TrainOptions.Gamble[city];
+        document.getElementById('TrainSpeedItem_'+city).value = TrainOptions.Item[city];
         if (!TrainOptions.SelectMax[city]) document.getElementById('max'+city).disabled=true;
     }
        
@@ -11757,6 +11779,10 @@ Tabs.AutoTrain = {
 		}, false);
      	document.getElementById('TrainSpeed_'+k).addEventListener('change', function(e){
 			TrainOptions.Gamble[e.target['className']] = e.target.value;
+     		saveTrainOptions();
+		}, false);
+     	document.getElementById('TrainSpeedItem_'+k).addEventListener('change', function(e){
+			TrainOptions.Item[e.target['className']] = e.target.value;
      		saveTrainOptions();
 		}, false);
         document.getElementById('SelectCity'+k).addEventListener('change', function(e){
@@ -11839,7 +11865,7 @@ Tabs.AutoTrain = {
   checktrainslots : function(cityId){
 	var t = Tabs.AutoTrain;
 	t.barracks = getCityBuilding(cityId, 13).count;
-	t.slots = Seed.queue_unt['city'+cityId].length;
+	t.slots = parseIntNan(Seed.queue_unt['city'+cityId].length);
 	t.empty = parseInt(t.barracks - t.slots);
 	return t.empty>0?true:false;
   },
@@ -11886,15 +11912,17 @@ Tabs.AutoTrain = {
 		setTimeout(t.nextcity, 5000);
 		return;
 	}
-	t.doTrain(cityId, TrainOptions['Troops'][t.city], t.amt, t.nextcity);
+	t.doTrain(cityId, TrainOptions['Troops'][t.city], t.amt, t.nextcity, TrainOptions.Item[t.city]);
   },
-  doTrain : function (cityId, unitId, num, notify){
+  doTrain : function (cityId, unitId, num, notify, tut){
 	var t = Tabs.AutoTrain;
 	var time = unsafeWindow.modal_barracks_traintime(unitId, num);
 	var params = unsafeWindow.Object.clone(unsafeWindow.g_ajaxparams);
 	params.cid = cityId;
 	params.type = unitId;
 	params.quant = num;
+	if(parseIntNan(tut) > 0)
+		params.items = tut;
 	if(parseInt(TrainOptions.Gamble[t.city]) > 0)
 		params.gambleId = TrainOptions.Gamble[t.city];
 
@@ -13458,8 +13486,10 @@ if (DEBUG_TRACE) logit (" 0 myAjaxRequest: "+ url +"\n" + inspect (o, 2, 1));
   var wasSuccess = o.onSuccess;
   var wasFailure = o.onFailure;
   var retry = 0;
-  var delay = 5;
+  var delay = 3;
+  var show = true;
   var noRetry = noRetry===true?true:false;
+  var silentTimer;
   opts.onSuccess = mySuccess;
   opts.onFailure = myFailure;
 
@@ -13478,7 +13508,17 @@ if (DEBUG_TRACE) logit (" 0 myAjaxRequest: "+ url +"\n" + inspect (o, 2, 1));
     wasFailure (o);
   }
   function mySuccess (msg){
-    var rslt = eval("(" + msg.responseText + ")");
+    var rslt;
+    try {
+        rslt = JSON2.parse(msg.responseText);
+    } catch(e) {
+        //alert(unescape(msg.responseText));
+        if (retry<2) {
+            rslt = {"ok":false,"error_code":9,"errorMsg":"Failed due to invalid json"}
+        } else {
+            rslt = {"ok":true,"error_code":9,"data":[]};
+        }
+    }
     var x;
     if (window.EmulateAjaxError){
       rslt.ok = false;  
@@ -13495,9 +13535,16 @@ if (DEBUG_TRACE) logit (" 0 myAjaxRequest: "+ url +"\n" + inspect (o, 2, 1));
      // rslt.errorMsg = rslt.errorMsg.substr (0, x-1);
     if (!noRetry && (rslt.error_code==0 || rslt.error_code==8 || rslt.error_code==1 || rslt.error_code==3)){
       dialogRetry (inspect(rslt.errorMsg), delay, function(){myRetry()}, function(){wasSuccess (rslt)}, rslt.error_code);
+    } else if (!noRetry && rslt.error_code==9) {
+        silentTimer = setTimeout(silentRetry, delay*100);
     } else {
       wasSuccess (rslt);
     }
+  }
+  
+  function silentRetry() {
+    clearTimeout(silentTimer);
+    myRetry();
   }
 }
 
@@ -14014,7 +14061,7 @@ var ChatPane = {
 						}
 					}
 				// Hide alliance reports in chat
-					var myregexp1 = /You are # [0-9]+ of 10 to help/i;
+					var myregexp1 = /You are # [0-9]+ of [0-9]+ to help/i;
 					var myregexp2 = /\'s Kingdom does not need help\./i;
 					var myregexp3 = /\'s project has already been completed\./i;
 					var myregexp4 = /\'s project has received the maximum amount of help\./i;
@@ -16952,7 +16999,7 @@ Tabs.Apothecary = {
 			var cid = Cities.cities[city].id;
 			var amt = 0;
 			if(Seed.woundedUnits['city'+cid]['unt'+info.troop] < info.min) continue;
-			if(Seed.woundedUnits['city'+cid]['unt'+info.troop] > info.max){
+			if(Seed.woundedUnits['city'+cid]['unt'+info.troop] > info.max && info.max_sel){
 				amt = info.max;
 			} else {
 				amt = Seed.woundedUnits['city'+cid]['unt'+info.troop];
@@ -17859,7 +17906,7 @@ Tabs.Combat = {
 					if (rslt.user_action) {
 						new CdialogCancelContinue('<SPAN class=boldRed>CAPTCHA ALERT! You have been sending too many attacks!</span>', null, null, mainPop.getMainDiv);
 						logit('send march captcha');
-						setTimeout (function(){callback(r,retry,CrestDataNum);}, 1*60*1000);
+						setTimeout (function(){callback(r,retry,CrestDataNum);}, 5*60*1000);
 						return;
 					}
 					setTimeout (function(){callback(r,retry,CrestDataNum);}, 5000);
@@ -17962,7 +18009,7 @@ Tabs.Combat = {
 				return;
 				break;
 			case 30:
-				reloadKOC();
+				//reloadKOC();
 				return;
 				break;
 		}

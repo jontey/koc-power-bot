@@ -1,7 +1,7 @@
 10
 
 dir
-893
+897
 https://koc-power-bot.googlecode.com/svn/tags/20110817a-release
 https://koc-power-bot.googlecode.com/svn
 
@@ -25,74 +25,6 @@ has-props
 
 
 91a980a7-b36c-2723-9ba7-67aa146be212
-
-koc-seed-obj-250_beautified.js
-file
-
-
-
-
-2012-02-10T05:17:46.099171Z
-8a4bcac25bf086c6152ef0ba57759935
-2011-08-17T21:03:27.823328Z
-615
-jontey88@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-429307
-
-revison_history.txt
-file
-
-
-
-
-2012-02-10T05:17:46.099171Z
-899349817dafce9c9b168f5c4228259c
-2011-08-17T21:03:27.823328Z
-615
-jontey88@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11776
 
 KOCpowerBot.user.js
 file
@@ -195,4 +127,72 @@ jontey88@gmail.com
 
 
 811
+
+koc-seed-obj-250_beautified.js
+file
+
+
+
+
+2012-02-10T05:17:46.099171Z
+8a4bcac25bf086c6152ef0ba57759935
+2011-08-17T21:03:27.823328Z
+615
+jontey88@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+429307
+
+revison_history.txt
+file
+
+
+
+
+2012-02-10T05:17:46.099171Z
+899349817dafce9c9b168f5c4228259c
+2011-08-17T21:03:27.823328Z
+615
+jontey88@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11776
 

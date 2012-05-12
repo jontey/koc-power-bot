@@ -1,7 +1,7 @@
 10
 
 dir
-893
+897
 https://koc-power-bot.googlecode.com/svn/workspaces/nico
 https://koc-power-bot.googlecode.com/svn
 
@@ -25,6 +25,40 @@ dentox@gmail.com
 
 
 91a980a7-b36c-2723-9ba7-67aa146be212
+
+koc_power_bot.user.js
+file
+
+
+
+
+2012-02-10T05:17:41.483149Z
+6011c3b2df1455f790b4cb40f3e61ca2
+2011-07-01T23:26:20.990163Z
+511
+dentox@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+527080
 
 koc_power_bot_Reinforce.user.js
 file
@@ -93,38 +127,4 @@ tchapin
 
 
 365343
-
-koc_power_bot.user.js
-file
-
-
-
-
-2012-02-10T05:17:41.483149Z
-6011c3b2df1455f790b4cb40f3e61ca2
-2011-07-01T23:26:20.990163Z
-511
-dentox@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-527080
 

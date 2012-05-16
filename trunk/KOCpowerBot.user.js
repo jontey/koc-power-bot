@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           KOC Power Bot
-// @version        20120512a
+// @version        20120516a
 // @namespace      mat
 // @homepage       http://userscripts.org/scripts/show/101052
 // @include        *.kingdomsofcamelot.com/*main_src.php*
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 
-var Version = '20120512a';
+var Version = '20120516a';
 
 // These switches are for testing, all should be set to false for released version:
 var DEBUG_TRACE = false;
@@ -8959,7 +8959,7 @@ Tabs.AutoCraft = {
         m += "<td colspan=2><center><b>Items</b></center></td><td><center><b>Inventar</b></center></td><td><b>Amount</b></td>"; 
         m += "<td colspan=2><center><b>Items</b></center></td><td><center><b>Inventar</b></center></td><td><b>Amount</b></td>"; 
 		m += "</tr><tr>";
-        	 
+		var count = 0;
 		for(var i=0; i < unsafeWindow.recipelist[1].length; i++){
 			var h = parseInt(unsafeWindow.recipelist[1][i].output_item_id);
 			t.craftinfo[h] = {};
@@ -8969,7 +8969,8 @@ Tabs.AutoCraft = {
 			t.craftinfo[h].requirements = unsafeWindow.recipelist[1][i].requirements;
 			m += "<td ><center><img src='http://kabam1-a.akamaihd.net/kingdomsofcamelot/fb/e2/src/img/items/70/"+ h + ".jpg' width=25></center></td><td><center>"+unsafeWindow.itemlist["i"+h].name+"</center></td><td><center><span class=boldGreen>"+parseIntNan(Seed.items["i"+h])+"</span></center></td>";
 			m += "<td><input type=text size=4 id='Craft_nb_"+h+"' value='"+ parseIntNan(TrainOptions.CraftingNb[h]) +"'></td>";
-			if ((i+1)%2 == 0) m += "</tr><tr>";
+			if ((count+1)%2 == 0) m += "</tr><tr>";
+			count++;
 		}
 		for(var i=0; i < unsafeWindow.recipelist[3].length; i++){
 			var h = parseInt(unsafeWindow.recipelist[3][i].output_item_id);
@@ -8980,7 +8981,8 @@ Tabs.AutoCraft = {
 			t.craftinfo[h].requirements = unsafeWindow.recipelist[3][i].requirements;
 			m += "<td ><center><img src='http://kabam1-a.akamaihd.net/kingdomsofcamelot/fb/e2/src/img/items/70/"+ h + ".jpg' width=25></center></td><td><center>"+unsafeWindow.itemlist["i"+h].name+"</center></td><td><center><span class=boldGreen>"+parseIntNan(Seed.items["i"+h])+"</span></center></td>";
 			m += "<td><input type=text size=4 id='Craft_nb_"+h+"' value='"+ parseIntNan(TrainOptions.CraftingNb[h]) +"'></td>";
-			if ((i+1)%2 == 0) m += "</tr><tr>";
+			if ((count+1)%2 == 0) m += "</tr><tr>";
+			count++;
 		}
 		
         m+="</table><b>Note:</b> If you complete more than one Item, the creation will be done randomly. <BR> <b>Important: Min. 50 000 Aethestones and Refresh to Update the Inventar!</b> ";

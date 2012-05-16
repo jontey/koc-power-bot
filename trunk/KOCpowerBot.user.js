@@ -17502,35 +17502,36 @@ Tabs.Combat = {
     m += '<td><INPUT id=showCrestTargets type=submit value="Show Targets"></td>';
     m += '<TD><INPUT id=pbsendreport type=checkbox '+ (Options.crestreport?' CHECKED':'') +'\> Send Crest report every ';
     m += '<INPUT id=pbsendcrestreportint value='+ Options.CrestMsgInterval +' type=text size=3 \> hours </td>\
-		  <TD>Attack interval <INPUT type=text size=3 value='+Options.Crestinterval+' id=pbcrest_interval />seconds</table>';
+		  <TD>Attack interval <INPUT type=text size=3 value='+Options.Crestinterval+' id=pbcrest_interval />seconds</tr></table>';
   
     m += '<DIV id=pbOpt class=pbStat>CRESTING OPTIONS</div><TABLE id=pbcrestopt	 width=100% height=0% class=pbTab><TR align="center"></table>';
     m += '<DIV style="margin-bottom:10px;">Crest from city: <span id=crestcity></span></div>';
     
     m += '<TABLE class=ptTab><TR><TD>Wild coords: X:<INPUT id=pbcrestx type=text size=3 maxlength=3 value=""></td>';
-    m += '<TD>Y:<INPUT id=pbcresty type=text size=3 maxlength=3 value=""></td></tr></table>';
+    m += '<TD>Y:<INPUT id=pbcresty type=text size=3 maxlength=3 value=""></td></tr>';
+    m += '<TR><TD><INPUT type=checkbox id=pbcrest_iswild CHECKED /> Is Wild </td></tr></table>';
    
 
-    m += '<TABLE class=ptTab><TR><TD>Wave <b>1</b>: </td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_1_30.png></td><TD><INPUT id=R1ST type=text size=7 maxlength=6 value=0></td>';
+    m += '<TABLE class=ptTab><TR><TD><INPUT type=checkbox id=pbcrest_rnd1 CHECKED /></td><TD>Wave <b>1</b>: </td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_1_30.png></td><TD><INPUT id=R1ST type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_2_30.png></td><TD><INPUT id=R1MM type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_3_30.png></td><TD><INPUT id=R1Scout type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_4_30.png></td><TD><INPUT id=R1Pike type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_5_30.png></td><TD><INPUT id=R1Sword type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_6_30.png></td><TD><INPUT id=R1Arch type=text size=7 maxlength=6 value=0></td></tr>';
-    m += '<tr><td></td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_7_30.png></td><TD><INPUT id=R1LC type=text size=7 maxlength=6 value=0></td>';
+    m += '<tr><td></td><td></td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_7_30.png></td><TD><INPUT id=R1LC type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_8_30.png></td><TD><INPUT id=R1HC type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_9_30.png></td><TD><INPUT id=R1SW type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_10_30.png></td><TD><INPUT id=R1Ball type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_11_30.png></td><TD><INPUT id=R1Ram type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_12_30.png></td><TD><INPUT id=R1Cat type=text size=7 maxlength=6 value=0></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>';
     
-    m += '<TR><TD>Wave <b>2</b>: </td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_1_30.png></td><TD><INPUT id=R2ST type=text size=7 maxlength=6 value=0></td>';
+    m += '<TR><TD><INPUT type=checkbox id=pbcrest_rnd2 CHECKED /></td><TD>Wave <b>2</b>: </td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_1_30.png></td><TD><INPUT id=R2ST type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_2_30.png></td><TD><INPUT id=R2MM type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_3_30.png></td><TD><INPUT id=R2Scout type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_4_30.png></td><TD><INPUT id=R2Pike type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_5_30.png></td><TD><INPUT id=R2Sword type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_6_30.png></td><TD><INPUT id=R2Arch type=text size=7 maxlength=6 value=0></td></tr>';
-    m += '<tr><td></td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_7_30.png></td><TD><INPUT id=R2LC type=text size=7 maxlength=6 value=0></td>';
+    m += '<tr><td></td><td></td><TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_7_30.png></td><TD><INPUT id=R2LC type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_8_30.png></td><TD><INPUT id=R2HC type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_9_30.png></td><TD><INPUT id=R2SW type=text size=7 maxlength=6 value=0></td>';
     m += '<TD>&nbsp;&nbsp;<img src=http://cdn1.kingdomsofcamelot.com/fb/e2/src/img/units/unit_10_30.png></td><TD><INPUT id=R2Ball type=text size=7 maxlength=6 value=0></td>';
@@ -17566,6 +17567,41 @@ Tabs.Combat = {
     	CrestOptions.CrestCity = t.tcp.city.id
     }
 
+	$('pbcrest_iswild').addEventListener('click', function(){
+		CrestOptions.isWild = this.checked;
+	},false);
+	$('pbcrest_rnd1').addEventListener('click', function(){
+		var checked = (!this.checked);
+		CrestOptions.round1 = this.checked;
+		$('R1ST').disabled = checked;
+		$('R1MM').disabled = checked;
+		$('R1Scout').disabled = checked;
+		$('R1Pike').disabled = checked;
+		$('R1Sword').disabled = checked;
+		$('R1Arch').disabled = checked;
+		$('R1LC').disabled = checked;
+		$('R1HC').disabled = checked;
+		$('R1SW').disabled = checked;
+		$('R1Ball').disabled = checked;
+		$('R1Ram').disabled = checked;
+		$('R1Cat').disabled = checked;
+	},false);
+	$('pbcrest_rnd2').addEventListener('click', function(){
+		var checked = (!this.checked);
+		CrestOptions.round2 = this.checked;
+		$('R2ST').disabled = checked;
+		$('R2MM').disabled = checked;
+		$('R2Scout').disabled = checked;
+		$('R2Pike').disabled = checked;
+		$('R2Sword').disabled = checked;
+		$('R2Arch').disabled = checked;
+		$('R2LC').disabled = checked;
+		$('R2HC').disabled = checked;
+		$('R2SW').disabled = checked;
+		$('R2Ball').disabled = checked;
+		$('R2Ram').disabled = checked;
+		$('R2Cat').disabled = checked;
+	},false);
       document.getElementById('pbcrestx').addEventListener('keyup', function(){
           if (isNaN(document.getElementById('pbcrestx').value)) document.getElementById('pbcrestx').value='' ;
       }, false);
@@ -17900,7 +17936,7 @@ Tabs.Combat = {
 					now = now.toFixed(0);
 					CrestData[CrestDataNum].lastRoundTwo = now;
 					saveCrestData();
-					setTimeout (function(){callback(r,0,CrestDataNum);}, (Math.random()*10*1000)+(5*1000));	
+					setTimeout (function(){callback(r,0,parseInt(CrestDataNum)+1);}, (Math.random()*10*1000)+(5*1000));	
 					return;
 					
 				} else {
@@ -17995,27 +18031,26 @@ Tabs.Combat = {
 		cityID = 'city' + CrestData[CrestDataNum].CrestCity;
 		retry++;
 		
-		for (var k in Seed.wilderness[cityID] ){
-			if (Seed.wilderness[cityID][k]['xCoord']==CrestData[CrestDataNum].X && Seed.wilderness[cityID][k]['yCoord']==CrestData[CrestDataNum].Y && t.error_code!=401) {
-				t.abandonWilderness(Seed.wilderness[cityID][k]['tileId'],Seed.wilderness[cityID][k]['xCoord'],Seed.wilderness[cityID][k]['yCoord'],CrestData[CrestDataNum].CrestCity,t.Rounds,retry,CrestDataNum);
+		if(CrestData[CrestDataNum].isWild){
+			for (var k in Seed.wilderness[cityID] ){
+				if (Seed.wilderness[cityID][k]['xCoord']==CrestData[CrestDataNum].X && Seed.wilderness[cityID][k]['yCoord']==CrestData[CrestDataNum].Y && t.error_code!=401) {
+					t.abandonWilderness(Seed.wilderness[cityID][k]['tileId'],Seed.wilderness[cityID][k]['xCoord'],Seed.wilderness[cityID][k]['yCoord'],CrestData[CrestDataNum].CrestCity,t.Rounds,retry,CrestDataNum);
+					break;
+				}
 			}
 		}
 
 		switch (retry) {
 			case 10:
-				setTimeout(function(){ t.Rounds(r,retry,CrestDataNum);},30000);
+				setTimeout(function(){ t.Rounds(r,retry,CrestDataNum);},30*1000);
 				return;
 				break;
 			case 20:
-				setTimeout(function(){ t.Rounds(r,retry,CrestDataNum);},30000);
-				return;
-				break;
-			case 30:
-				//reloadKOC();
+				setTimeout(function(){ t.Rounds(r,retry,CrestDataNum);},30*1000);
 				return;
 				break;
 		}
-
+		
 		if (parseInt(Seed.units[cityID]['unt1']) < CrestData[CrestDataNum].R1ST || parseInt(Seed.units[cityID]['unt2']) < CrestData[CrestDataNum].R1MM || parseInt(Seed.units[cityID]['unt3']) < CrestData[CrestDataNum].R1Scout || parseInt(Seed.units[cityID]['unt4']) < CrestData[CrestDataNum].R1Pike || parseInt(Seed.units[cityID]['unt5']) < CrestData[CrestDataNum].R1Sword || parseInt(Seed.units[cityID]['unt6']) < CrestData[CrestDataNum].R1Arch || parseInt(Seed.units[cityID]['unt7']) < CrestData[CrestDataNum].R1LC || parseInt(Seed.units[cityID]['unt8']) < CrestData[CrestDataNum].R1HC || parseInt(Seed.units[cityID]['unt9']) < CrestData[CrestDataNum].R1SW || parseInt(Seed.units[cityID]['unt10']) < CrestData[CrestDataNum].R1Ball || parseInt(Seed.units[cityID]['unt11']) < CrestData[CrestDataNum].R1Ram || parseInt(Seed.units[cityID]['unt12']) < CrestData[CrestDataNum].R1Cat || parseInt(Seed.units[cityID]['unt1']) < CrestData[CrestDataNum].R2ST || parseInt(Seed.units[cityID]['unt2']) < CrestData[CrestDataNum].R2MM || parseInt(Seed.units[cityID]['unt3']) < CrestData[CrestDataNum].R2Scout || parseInt(Seed.units[cityID]['unt4']) < CrestData[CrestDataNum].R2Pike || parseInt(Seed.units[cityID]['unt5']) < CrestData[CrestDataNum].R2Sword || parseInt(Seed.units[cityID]['unt6']) < CrestData[CrestDataNum].R2Arch || parseInt(Seed.units[cityID]['unt7']) < CrestData[CrestDataNum].R2LC || parseInt(Seed.units[cityID]['unt8']) < CrestData[CrestDataNum].R2HC || parseInt(Seed.units[cityID]['unt9']) < CrestData[CrestDataNum].R2SW || parseInt(Seed.units[cityID]['unt10']) < CrestData[CrestDataNum].R2Ball || parseInt(Seed.units[cityID]['unt11']) < CrestData[CrestDataNum].R2Ram || parseInt(Seed.units[cityID]['unt12']) < CrestData[CrestDataNum].R2Cat) {
 			if (CrestData.length == 1) {
 				t.timer = setTimeout(function(){ t.Rounds(r,retry,CrestDataNum);},Options.Crestinterval*1000);
@@ -18024,6 +18059,7 @@ Tabs.Combat = {
 				t.timer = setTimeout(function(){ t.Rounds(1,retry,parseInt(CrestDataNum)+1);},Options.Crestinterval*1000);
 			return;
 		}
+		
 
 		t.getAtkKnight(cityID);
 		slots=0;

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           KOC Power Bot
-// @version        20120516a
+// @version        20120516b
 // @namespace      mat
 // @homepage       http://userscripts.org/scripts/show/101052
 // @include        *.kingdomsofcamelot.com/*main_src.php*
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 
-var Version = '20120516a';
+var Version = '20120516b';
 
 // These switches are for testing, all should be set to false for released version:
 var DEBUG_TRACE = false;
@@ -1627,7 +1627,7 @@ Tabs.Throne = {
     }
     t.checkUpgradeInfo(true);
     if (ThroneOptions.Active) t.setActionTimer = setInterval(t.doAction,10000);
-    setInterval(t.salvageCheck,1*60*1000);
+    setInterval(t.salvageCheck,2*60*1000);
  },
     
  Salvage : function (){ 
@@ -16459,8 +16459,11 @@ function GetDisplayName(){
 
 //modal_maptile((tileID),(Name),(X),(Y),(Gender+Avatar),(User),(Might),(Title),(AllianceName),(null),(tileProvinceId),(tilename),(CityState),(TileLevel),(allianceId),(tileCityId),(tileUserId),(TypeName),(misted));
 //modal_maptile(453323,"Heineken4",172,622,"m6","Heineken",3758930,"60","Darkness",null,21,"city","Normal",9,2136,67677,1589067,"City",false);
+
+//koc version-572
+//modal_maptile(this,307227,"NewRetard",698,326,"m8","oftheNOOBS",42318533,"90","Darkness",null,14,"city","Normal",12,2136,26654,1550996,"City",false);return false;
 function DrawLevelIcons() {
-	var maptileRe = /modal_maptile.([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+)/;
+	var maptileRe = /modal_maptile.([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+)/;
 	var mapwindow=document.getElementById('mapwindow');
 	if(!mapwindow) return;
 	var levelIcons=document.getElementById('LevelIcons');
@@ -16476,11 +16479,11 @@ function DrawLevelIcons() {
 		var owner='';
 		if(onclick) {
 			var onclickM=maptileRe.exec(onclick);
-			if(onclickM && onclickM[6]!='"null"') {
-				var might=onclickM[7].StripQuotes();
-				var alliance=onclickM[15].StripQuotes();
+			if(onclickM && onclickM[7]!='"null"') {
+				var might=onclickM[8].StripQuotes();
+				var alliance=onclickM[16].StripQuotes();
 				var dip=getDiplomacy(alliance);
-				owner=" "+onclickM[6].StripQuotes();
+				owner=" "+onclickM[7].StripQuotes();
 			}
 		}
 		var m=lvRe.exec(a.className);
@@ -16491,16 +16494,16 @@ function DrawLevelIcons() {
 		if(!idDone) { a.id='levelIcons'; idDone=true; }
 		sp[0].style.color='#cc0';
 		
-		if (alliance == 'null' && onclickM[12]=='"city"') sp[0].style.color='#33CCFF';
-		if (dip == 'hostile' && onclickM[12]=='"city"') sp[0].style.color='#FF0000';
-		if (onclickM[12]!='"city"' &&  onclickM[6]!='"null"') sp[0].style.color='#FF9900';
-		if (onclickM[12]!='"city"' &&  onclickM[5]=='"null"' && onclickM[6]=='"null"' && onclickM[7]=='"null"' && onclickM[8]=='"null"' && onclickM[15]=='"null"' && onclickM[10]=='"null"') sp[0].style.color='#CC0033';
+		if (alliance == 'null' && onclickM[13]=='"city"') sp[0].style.color='#33CCFF';
+		if (dip == 'hostile' && onclickM[13]=='"city"') sp[0].style.color='#FF0000';
+		if (onclickM[13]!='"city"' &&  onclickM[7]!='"null"') sp[0].style.color='#FF9900';
+		if (onclickM[13]!='"city"' &&  onclickM[6]=='"null"' && onclickM[7]=='"null"' && onclickM[8]=='"null"' && onclickM[9]=='"null"' && onclickM[16]=='"null"' && onclickM[11]=='"null"') sp[0].style.color='#CC0033';
 		if (Options.MapShowExtra) {
-			if (onclickM && onclickM[6]!='"null"' ) sp[0].innerHTML='&nbsp;'+m[1]+owner+'<br />Might:'+addCommas(might);
+			if (onclickM && onclickM[7]!='"null"' ) sp[0].innerHTML='&nbsp;'+m[1]+owner+'<br />Might:'+addCommas(might);
 			else sp[0].innerHTML='&nbsp;'+m[1]+addCommas(owner);
 		}
 		else {  
-			if (onclickM && onclickM[6]!='"null"' ) sp[0].innerHTML='&nbsp;'+m[1];
+			if (onclickM && onclickM[7]!='"null"' ) sp[0].innerHTML='&nbsp;'+m[1];
 			else sp[0].innerHTML='&nbsp;'+m[1]+addCommas(owner);
 		}
 		

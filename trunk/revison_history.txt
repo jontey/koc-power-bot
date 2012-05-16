@@ -1,9 +1,15 @@
 REVISION HISTORY:
 ----------------
 
+20120516b
+   *Added throne tab
+   *Added crest interval
+   *Added send me away from kabam
+   *Added autoFarm
+   *Added autoDF min/max knight combat selector
+   *Added Language tab
 20120316b
    * Added Minimum and Maximum knight filters to auto DF
-
 20120314f
    *Fixed auto crest not checking to ensure LC and HC present in city
 20120314e
